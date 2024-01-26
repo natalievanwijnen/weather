@@ -3,18 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <title>Weather App</title>
   </head>
   <body>
-    <div><h1 class="current-city">city</h1></div>
+    <div class="container">
+      <p>Thursday <strong>12:04</strong></p>
+
+      <header>
+        <p>
+          The weather in
+          <span>
+            <input type="text" id="citySearch" autocomplete="off" required" />
+          </span>
+          , right now.
+        </p>
+      </header>
+
+      <main>
+        <div class="material-symbols-outlined">wb_sunny</div>
+
+        <div>
+          <p>24</p>
+          <p>
+            <span class="material-symbols-outlined"> arrow_downward_alt </span
+            >16°
+            <span class="material-symbols-outlined"> arrow_upward_alt </span
+            >30°<br />
+            Sunny
+          </p>
+        </div>
+
+        <div>
+          <p>
+            <span class="material-symbols-outlined"> rainy </span>
+            <strong>0</strong>% <br />
+            <span class="material-symbols-outlined"> air </span>
+            <strong>19</strong> km/h <br />
+            <span class="material-symbols-outlined"> water_drop </span>
+            <strong>75</strong>%
+          </p>
+        </div>
+      </main>
+
+      <div><p>°C °F</p></div>
+    </div>
+
     <footer>
-      Coded by
-      <a href="https://github.com/natalievanwijnen" target="_blank"
-        >Natalie van Wijnen</a
-      >, hosted on
+      Open sourced on
       <a href="https://github.com/natalievanwijnen/weather" target="_blank"
         >GitHub</a
-      >, and
+      >, and hosted on
       <a href="https://weather-shecodes-plus.netlify.app/" target="_blank"
         >Netlify</a
       >.
