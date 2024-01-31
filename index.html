@@ -16,20 +16,27 @@
       <header id="currentDateTime">Thursday <strong>12:04</strong></header>
 
       <!-- Search Form -->
-      <div class="form" style="text-align: center">
-        <p>
-          The weather in
-          <span id="input-line">
-            <input type="text" id="citySearch" autocomplete="off" required />
-          </span>
-          , right now.
-        </p>
+      <div class="form">
+        <form id="searchForm">
+          <p>
+            The weather in
+            <input
+              type="text"
+              id="citySearch"
+              autocomplete="off"
+              required
+              oninput="adjustWidth()"
+            />
+            , right now.
+          </p>
+        </form>
       </div>
+
+      <div id="hiddenText"></div>
 
       <!-- Current Weather Section -->
       <main class="current-weather">
         <div class="material-symbols-outlined" id="currentSymbol">wb_sunny</div>
-
         <div>
           <p class="current-temp">24</p>
           <p class="min-max-temp">
