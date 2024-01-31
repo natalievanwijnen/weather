@@ -1,0 +1,168 @@
+/* General Styling */
+body {
+  background-color: #f0e2c8;
+  color: #323232;
+  font-family: "poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+.container {
+  background: #f8f3ea;
+  border-radius: 10px;
+  margin: 50px auto 30px; /* Adjusted margin-top value */
+  max-width: 550px;
+  padding: 50px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+header {
+  color: #323232;
+  margin-bottom: 30px;
+}
+
+/* Search Input */
+input:focus {
+  outline: none;
+  text-align: center;
+}
+
+#citySearch {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #ffb4fc;
+  color: #271bb1;
+  font-family: "poppins", sans-serif;
+  font-size: 16px;
+  transition: width 0.3s ease;
+  width: 40px;
+}
+
+/* Current Weather Styling */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 0.5rem;
+  margin: 30px;
+}
+
+.material-symbols-outlined#currentSymbol {
+  color: #ffb4fc;
+  font-size: 80px;
+  font-weight: 600;
+  text-align: right;
+  margin-top: 25px;
+}
+
+.current-temp {
+  color: #271bb1;
+  font-size: 64px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.min-max-temp,
+.current-condition,
+.current-details {
+  font-size: 12px;
+  margin-top: -15px;
+  margin-bottom: 18px;
+}
+
+.min-max-temp span.material-symbols-outlined {
+  font-size: 18px;
+  vertical-align: -0.25em;
+}
+
+/* Current Weather Details Styling */
+.current-details {
+  text-align: left;
+  margin: 0;
+  margin-top: 3px;
+}
+
+.current-details span.material-symbols-outlined {
+  color: #ffb4fc;
+  font-size: 20px;
+}
+
+strong.rain,
+strong.temperature,
+strong.humidity {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Forecast Styling */
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-gap: 1rem;
+  margin: 30px;
+}
+
+.weekday {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.forecast div.material-symbols-outlined {
+  color: #ffb4fc;
+  font-size: 40px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.forecast span.material-symbols-outlined {
+  font-size: 22px;
+  vertical-align: -0.2em;
+}
+
+.temperature-range {
+  margin: 0;
+}
+
+/* Temperature Scale Switch Styling */
+.temp-switch {
+  background: #ffb4fc;
+  border-radius: 35px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 70px;
+  position: relative;
+  top: 20px;
+}
+
+.temp-switch button {
+  background: #ffb4fc;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 8px;
+  margin: 3px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.temp-switch button.active {
+  background: #271bb1;
+  font-weight: 600;
+  color: #f8f3ea;
+}
+
+/* Footer Styling */
+footer {
+  color: #271bb1;
+  font-size: 12px;
+}
+
+a {
+  color: #271bb1;
+  text-decoration: none;
+  font-weight: 600;
+}

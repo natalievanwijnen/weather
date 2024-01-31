@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -11,47 +12,106 @@
   </head>
   <body>
     <div class="container">
-      <p>Thursday <strong>12:04</strong></p>
+      <!-- Header -->
+      <header id="currentDateTime">Thursday <strong>12:04</strong></header>
 
-      <header>
+      <!-- Search Form -->
+      <div class="form" style="text-align: center">
         <p>
           The weather in
-          <span>
-            <input type="text" id="citySearch" autocomplete="off" required" />
+          <span id="input-line">
+            <input type="text" id="citySearch" autocomplete="off" required />
           </span>
           , right now.
         </p>
-      </header>
+      </div>
 
-      <main>
-        <div class="material-symbols-outlined">wb_sunny</div>
+      <!-- Current Weather Section -->
+      <main class="current-weather">
+        <div class="material-symbols-outlined" id="currentSymbol">wb_sunny</div>
 
         <div>
-          <p>24</p>
-          <p>
+          <p class="current-temp">24</p>
+          <p class="min-max-temp">
             <span class="material-symbols-outlined"> arrow_downward_alt </span
             >16°
-            <span class="material-symbols-outlined"> arrow_upward_alt </span
-            >30°<br />
-            Sunny
+            <span class="material-symbols-outlined"> arrow_upward_alt </span>30°
           </p>
+          <p class="current-condition">Sunny</p>
         </div>
 
-        <div>
+        <!-- Current Weather Details -->
+        <div class="current-details">
           <p>
             <span class="material-symbols-outlined"> rainy </span>
-            <strong>0</strong>% <br />
+            <strong class="rain">0</strong>% <br />
             <span class="material-symbols-outlined"> air </span>
-            <strong>19</strong> km/h <br />
+            <strong class="temperature">19</strong> km/h <br />
             <span class="material-symbols-outlined"> water_drop </span>
-            <strong>75</strong>%
+            <strong class="humidity">75</strong>%
           </p>
         </div>
       </main>
 
-      <div><p>°C °F</p></div>
+      <!-- Forecast Section -->
+      <div class="forecast">
+        <span>
+          <p class="weekday">day</p>
+          <div class="material-symbols-outlined" id="currentWeatherSymbol">
+            wb_sunny
+          </div>
+          <p class="temperature-range">
+            <span class="material-symbols-outlined"> arrow_downward_alt </span
+            >16°
+            <span class="material-symbols-outlined"> arrow_upward_alt </span>30°
+          </p>
+        </span>
+
+        <span>
+          <p class="weekday">day</p>
+          <div class="material-symbols-outlined" id="currentWeatherSymbol">
+            wb_sunny
+          </div>
+          <p class="temperature-range">
+            <span class="material-symbols-outlined"> arrow_downward_alt </span
+            >16°
+            <span class="material-symbols-outlined"> arrow_upward_alt </span>30°
+          </p>
+        </span>
+
+        <span>
+          <p class="weekday">day</p>
+          <div class="material-symbols-outlined" id="currentWeatherSymbol">
+            wb_sunny
+          </div>
+          <p class="temperature-range">
+            <span class="material-symbols-outlined"> arrow_downward_alt </span
+            >16°
+            <span class="material-symbols-outlined"> arrow_upward_alt </span>30°
+          </p>
+        </span>
+
+        <span>
+          <p class="weekday">day</p>
+          <div class="material-symbols-outlined" id="currentWeatherSymbol">
+            wb_sunny
+          </div>
+          <p class="temperature-range">
+            <span class="material-symbols-outlined"> arrow_downward_alt </span
+            >16°
+            <span class="material-symbols-outlined"> arrow_upward_alt </span>30°
+          </p>
+        </span>
+      </div>
+
+      <!-- Temperature Scale Switch -->
+      <div class="temp-switch">
+        <button id="celsiusBtn" class="active">°C</button>
+        <button id="fahrenheitBtn">°F</button>
+      </div>
     </div>
 
+    <!-- Footer -->
     <footer>
       Open sourced on
       <a href="https://github.com/natalievanwijnen/weather" target="_blank"
@@ -61,5 +121,6 @@
         >Netlify</a
       >.
     </footer>
+    <script src="src/index.js"></script>
   </body>
 </html>
