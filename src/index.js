@@ -18,9 +18,17 @@ function adjustWidth() {
 }
 
 function showWeather(response) {
-  let temperatureElement = document.querySelector("#temperature");
-  let temperature = response.data.temperature.current;
-  temperatureElement.innerHTML = Math.round(temperature);
+  document.querySelector("#temperature").innerHTML = Math.round(
+    response.data.temperature.current
+  );
+  document.querySelector("#description").innerHTML =
+    response.data.condition.description;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#humidity").innerHTML = Math.round(
+    response.data.temperature.humidity
+  );
 }
 
 function searchCity(city) {

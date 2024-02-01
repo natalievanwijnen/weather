@@ -14,10 +14,9 @@
   <body>
     <div class="container">
       <!-- Header -->
-      <header id="currentDateTime">Thursday <strong>12:04</strong></header>
 
       <!-- Search Form -->
-      <div class="form">
+      <header class="form">
         <form id="searchForm">
           <p>
             The weather in
@@ -26,13 +25,13 @@
               id="citySearch"
               placeholder="Perth"
               autocomplete="off"
-              required
               oninput="adjustWidth()"
+              required
             />
             , right now.
           </p>
         </form>
-      </div>
+      </header>
 
       <div id="hiddenText"></div>
 
@@ -41,23 +40,18 @@
         <div class="material-symbols-outlined" id="currentSymbol">wb_sunny</div>
         <div>
           <p class="current-temp" id="temperature">24</p>
-          <p class="current-temperature-range">
-            <span class="material-symbols-outlined"> arrow_downward_alt </span
-            >16°
-            <span class="material-symbols-outlined"> arrow_upward_alt </span>30°
-          </p>
-          <p class="current-condition">Sunny</p>
+          <p class="current-condition" id="description">Sunny</p>
+          <p id="currentDateTime">Thursday <strong>12:04</strong></p>
         </div>
 
         <!-- Current Weather Details -->
         <div class="current-details">
           <p>
-            <span class="material-symbols-outlined"> rainy </span>
-            <strong class="rain">0</strong>% <br />
             <span class="material-symbols-outlined"> air </span>
-            <strong class="temperature">19</strong> km/h <br />
+            <strong class="wind" id="wind">19</strong> km/h <br />
+
             <span class="material-symbols-outlined"> water_drop </span>
-            <strong class="humidity">75</strong>%
+            <strong class="humidity" id="humidity">75</strong>%
           </p>
         </div>
       </main>
@@ -65,62 +59,52 @@
       <!-- Forecast Section -->
       <div class="forecast">
         <span>
-          <p class="weekday">day</p>
+          <p class="weekday" id="weekdayOne">day</p>
           <div class="material-symbols-outlined" id="forecastWeatherSymbol">
             wb_sunny
           </div>
-          <p class="forecast-temperature-range">
-            <span class="material-symbols-outlined"> arrow_downward_alt </span
-            >16°
-            <span class="material-symbols-outlined"> arrow_upward_alt </span>30°
+          <p class="forecast-temperature">
+            <span id="forecastTemperature">16°</span>
           </p>
         </span>
 
         <span>
-          <p class="weekday">day</p>
+          <p class="weekday" id="weekdayTwo">day</p>
           <div class="material-symbols-outlined" id="forecastWeatherSymbol">
             wb_sunny
           </div>
-          <p class="forecast-temperature-range">
-            <span class="material-symbols-outlined"> arrow_downward_alt </span
-            >16°
-            <span class="material-symbols-outlined"> arrow_upward_alt </span>30°
+          <p class="forecast-temperature">
+            <span id="forecastTemperature">16°</span>
           </p>
         </span>
 
         <span>
-          <p class="weekday">day</p>
+          <p class="weekday" id="weekdayThree">day</p>
           <div class="material-symbols-outlined" id="forecastWeatherSymbol">
             wb_sunny
           </div>
-          <p class="forecast-temperature-range">
-            <span class="material-symbols-outlined"> arrow_downward_alt </span
-            >16°
-            <span class="material-symbols-outlined"> arrow_upward_alt </span>30°
+          <p class="forecast-temperature">
+            <span id="forecastTemperature">16°</span>
           </p>
         </span>
 
         <span>
-          <p class="weekday">day</p>
+          <p class="weekday" id="weekdayFour">day</p>
           <div class="material-symbols-outlined" id="forecastWeatherSymbol">
             wb_sunny
           </div>
-          <p class="forecast-temperature-range">
-            <span class="material-symbols-outlined"> arrow_downward_alt </span
-            >16°
-            <span class="material-symbols-outlined"> arrow_upward_alt </span>30°
+          <p class="forecast-temperature">
+            <span id="forecastTemperature">16°</span>
           </p>
         </span>
 
         <span>
-          <p class="weekday">day</p>
+          <p class="weekday" id="weekdayFive">day</p>
           <div class="material-symbols-outlined" id="forecastWeatherSymbol">
             wb_sunny
           </div>
-          <p class="forecast-temperature-range">
-            <span class="material-symbols-outlined"> arrow_downward_alt </span
-            >16°
-            <span class="material-symbols-outlined"> arrow_upward_alt </span>30°
+          <p class="forecast-temperature">
+            <span id="forecastTemperature">16°</span>
           </p>
         </span>
       </div>

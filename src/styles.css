@@ -19,19 +19,14 @@ body {
 .container {
   background: var(--primary-bg-color);
   border-radius: 10px;
+  box-shadow: -5px -5px 10px 0px #ffffff, 5px 5px 10px 0px var(--shadow-color);
   margin: 50px auto 30px;
   max-width: 550px;
   padding: 50px;
-  box-shadow: -5px -5px 10px 0px #ffffff, 5px 5px 10px 0px var(--shadow-color);
 }
 
 strong {
   font-weight: 600;
-}
-
-header {
-  color: var(--text-color);
-  margin-bottom: 30px;
 }
 
 /* Search Input */
@@ -72,9 +67,9 @@ main {
 
 .material-symbols-outlined#currentSymbol {
   color: var(--symbol-color);
-  font-size: 80px;
+  font-size: 70px;
   font-weight: 600;
-  margin-top: 25px;
+  margin-top: 32px;
   text-align: right;
 }
 
@@ -85,23 +80,17 @@ main {
   margin: 0;
 }
 
-.current-temperature-range,
 .current-condition,
-.current-details {
+#currentDateTime {
   font-size: 12px;
   margin-bottom: 18px;
   margin-top: -15px;
 }
 
-.current-temperature-range span.material-symbols-outlined {
-  font-size: 18px;
-  vertical-align: -0.25em;
-}
-
 /* Current Weather Details */
 .current-details {
   margin: 0;
-  margin-top: 3px;
+  margin-top: 16px;
   text-align: left;
 }
 
@@ -110,8 +99,7 @@ main {
   font-size: 20px;
 }
 
-strong.rain,
-strong.temperature,
+strong.wind,
 strong.humidity {
   font-size: 24px;
   font-weight: 600;
@@ -137,19 +125,17 @@ strong.humidity {
   margin: 0;
 }
 
-.forecast span.material-symbols-outlined {
-  font-size: 18px;
-  vertical-align: -0.25em;
-}
-
-.forecast-temperature-range {
-  font-size: 12px;
+.forecast-temperature {
+  color: var(--accent-color);
+  font-size: 16px;
+  font-weight: 600;
   margin: 0;
+  margin-top: 5px;
 }
 
 /* Temperature Scale Switch */
 .scale-switch {
-  background: var(--highlight-color);
+  background: var(--primary-bg-color);
   border-radius: 35px;
   display: flex;
   justify-content: center;
@@ -160,7 +146,7 @@ strong.humidity {
 }
 
 .scale-switch button {
-  background: var(--highlight-color);
+  background: var(--primary-bg-color);
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -178,12 +164,12 @@ strong.humidity {
 
 /* Footer */
 footer {
-  color: var(--accent-color);
+  color: var(--text-color);
   font-size: 12px;
 }
 
 a {
-  color: var(--accent-color);
+  color: var(--text-color);
   font-weight: 600;
   text-decoration: none;
 }
