@@ -17,11 +17,26 @@ function adjustWidth() {
   inputElement.style.width = newWidth;
 }
 
+function showWeather(response) {
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature = response.data.temperature.current;
+  temperatureElement.innerHTML = Math.round(temperature);
+}
+
+function searchCity(city) {
+  let apiKey = "ofa25a26c683btbc029a13b3d2bf94cc";
+  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+
+  axios.get(apiURL).then(showWeather);
+}
+
 function handleSearch(event) {
   event.preventDefault();
-  let searchInput = document.getElementById("citySearch");
-  console.log(searchInput.value);
+  let searchInput = document.querySelector("#citySearch");
+  searchCity(searchInput.value);
 }
 
 let searchFormElement = document.querySelector("#searchForm");
 searchFormElement.addEventListener("submit", handleSearch);
+
+searchCity("Perth");
