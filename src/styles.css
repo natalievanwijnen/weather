@@ -1,7 +1,15 @@
-/* General Styling */
+:root {
+  --primary-bg-color: #efe9ec;
+  --text-color: #323232;
+  --accent-color: #271bb1;
+  --highlight-color: #f0a3ed;
+  --shadow-color: rgba(137, 140, 140, 0.5);
+  --symbol-color: #ffb4fc;
+}
+
 body {
-  background-color: #f0e2c8;
-  color: #323232;
+  background-color: var(--primary-bg-color);
+  color: var(--text-color);
   font-family: "poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -9,11 +17,12 @@ body {
 }
 
 .container {
-  background: #f8f3ea;
+  background: var(--primary-bg-color);
   border-radius: 10px;
   margin: 50px auto 30px;
   max-width: 550px;
   padding: 50px;
+  box-shadow: -5px -5px 10px 0px #ffffff, 5px 5px 10px 0px var(--shadow-color);
 }
 
 strong {
@@ -21,7 +30,7 @@ strong {
 }
 
 header {
-  color: #323232;
+  color: var(--text-color);
   margin-bottom: 30px;
 }
 
@@ -32,15 +41,15 @@ input:focus {
 }
 
 #citySearch::placeholder {
-  color: #271bb1;
+  color: var(--accent-color);
   text-align: center;
 }
 
 #citySearch {
   background: none;
   border: none;
-  border-bottom: 2px solid #ffb4fc;
-  color: #271bb1;
+  border-bottom: 2px solid var(--highlight-color);
+  color: var(--accent-color);
   font-family: "poppins", sans-serif;
   font-size: 16px;
   transition: width 0.3s ease;
@@ -62,7 +71,7 @@ main {
 }
 
 .material-symbols-outlined#currentSymbol {
-  color: #ffb4fc;
+  color: var(--symbol-color);
   font-size: 80px;
   font-weight: 600;
   margin-top: 25px;
@@ -70,7 +79,7 @@ main {
 }
 
 .current-temp {
-  color: #271bb1;
+  color: var(--accent-color);
   font-size: 64px;
   font-weight: 600;
   margin: 0;
@@ -97,7 +106,7 @@ main {
 }
 
 .current-details span.material-symbols-outlined {
-  color: #ffb4fc;
+  color: var(--symbol-color);
   font-size: 20px;
 }
 
@@ -121,16 +130,16 @@ strong.humidity {
   margin-bottom: 10px;
 }
 
-.forecast div.material-symbols-outlined {
-  color: #ffb4fc;
+.forecast div#forecastWeatherSymbol {
+  color: var(--symbol-color);
   font-size: 40px;
   font-weight: 600;
   margin: 0;
 }
 
 .forecast span.material-symbols-outlined {
-  font-size: 22px;
-  vertical-align: -0.2em;
+  font-size: 18px;
+  vertical-align: -0.25em;
 }
 
 .forecast-temperature-range {
@@ -139,8 +148,8 @@ strong.humidity {
 }
 
 /* Temperature Scale Switch */
-.temp-switch {
-  background: #ffb4fc;
+.scale-switch {
+  background: var(--highlight-color);
   border-radius: 35px;
   display: flex;
   justify-content: center;
@@ -150,8 +159,8 @@ strong.humidity {
   width: 70px;
 }
 
-.temp-switch button {
-  background: #ffb4fc;
+.scale-switch button {
+  background: var(--highlight-color);
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -161,20 +170,20 @@ strong.humidity {
   transition: background-color 0.2s ease-in-out;
 }
 
-.temp-switch button.active {
-  background: #271bb1;
-  color: #f8f3ea;
+.scale-switch button.active {
+  background: var(--accent-color);
+  color: var(--primary-bg-color);
   font-weight: 600;
 }
 
 /* Footer */
 footer {
-  color: #271bb1;
+  color: var(--accent-color);
   font-size: 12px;
 }
 
 a {
-  color: #271bb1;
+  color: var(--accent-color);
   font-weight: 600;
   text-decoration: none;
 }
