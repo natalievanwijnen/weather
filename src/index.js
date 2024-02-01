@@ -6,7 +6,7 @@ function getTextWidth(text) {
 
 function adjustWidth() {
   let inputElement = document.getElementById("citySearch");
-  let minWidth = 30;
+  let minWidth = 40;
 
   let inputValue = inputElement.value.trim();
   let newWidth =

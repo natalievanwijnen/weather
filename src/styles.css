@@ -31,6 +31,11 @@ input:focus {
   text-align: center;
 }
 
+#citySearch::placeholder {
+  color: #271bb1;
+  text-align: center;
+}
+
 #citySearch {
   background: none;
   border: none;
@@ -71,7 +76,7 @@ main {
   margin: 0;
 }
 
-.min-max-temp,
+.current-temperature-range,
 .current-condition,
 .current-details {
   font-size: 12px;
@@ -79,7 +84,7 @@ main {
   margin-top: -15px;
 }
 
-.min-max-temp span.material-symbols-outlined {
+.current-temperature-range span.material-symbols-outlined {
   font-size: 18px;
   vertical-align: -0.25em;
 }
@@ -128,7 +133,8 @@ strong.humidity {
   vertical-align: -0.2em;
 }
 
-.temperature-range {
+.forecast-temperature-range {
+  font-size: 12px;
   margin: 0;
 }
 
