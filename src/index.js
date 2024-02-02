@@ -19,17 +19,17 @@ function handleInput(event) {
 
 // Display
 function showWeather(response) {
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.temperature.current
-  );
-  document.querySelector("#description").innerHTML =
-    response.data.condition.description;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
-  document.querySelector("#humidity").innerHTML = Math.round(
-    response.data.temperature.humidity
-  );
+  let temperatureElement = document.querySelector("#temperature");
+  let descriptionElement = document.querySelector("#description");
+  let windElement = document.querySelector("#wind");
+  let humidityElement = document.querySelector("#humidity");
+  let iconElement = document.querySelector("#currentSymbol");
+
+  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+  descriptionElement.innerHTML = response.data.condition.description;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  humidityElement.innerHTML = Math.round(response.data.temperature.humidity);
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 }
 
 function updateDateTime() {

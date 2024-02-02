@@ -2,7 +2,7 @@
   --primary-bg-color: #efe9ec;
   --text-color: #323232;
   --accent-color: #271bb1;
-  --highlight-color: #f0a3ed;
+  --highlight-color: #ffb4fc;
   --shadow-color: rgba(137, 140, 140, 0.5);
   --symbol-color: #ffb4fc;
 }
@@ -61,12 +61,10 @@ main {
   margin: 30px;
 }
 
-.material-symbols-outlined#currentSymbol {
-  color: var(--symbol-color);
-  font-size: 70px;
-  font-weight: 600;
-  margin-top: 32px;
-  text-align: right;
+.current-symbol img {
+  width: 115px;
+  margin-top: 10px;
+  margin-right: -10px;
 }
 
 .current-temp {
@@ -110,7 +108,8 @@ strong.humidity {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-  margin: 30px;
+  margin: 20px 30px;
+  justify-content: center;
 }
 
 .weekday {
@@ -118,19 +117,17 @@ strong.humidity {
   margin-bottom: 10px;
 }
 
-.forecast div#forecastWeatherSymbol {
-  color: var(--symbol-color);
-  font-size: 40px;
-  font-weight: 600;
-  margin: 0;
+.forecast-symbol img {
+  max-width: 50px;
+  margin: -20px auto 0;
+  display: block;
 }
 
 .forecast-temperature {
   color: var(--accent-color);
   font-size: 16px;
   font-weight: 600;
-  margin: 0;
-  margin-top: 5px;
+  margin: -5px 0 0;
 }
 
 /* Temperature Scale Switch */
