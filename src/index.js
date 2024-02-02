@@ -31,6 +31,26 @@ function showWeather(response) {
   );
 }
 
+function updateDateTime() {
+  let todayElement = document.getElementById("today");
+  let timeElement = document.getElementById("time");
+  let now = new Date();
+  let weekdays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  todayElement.innerHTML = weekdays[now.getDay()];
+  timeElement.innerHTML = now.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
 function searchCity(city) {
   let apiKey = "ofa25a26c683btbc029a13b3d2bf94cc";
   let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
@@ -44,7 +64,6 @@ function handleSearch(event) {
   searchCity(searchInput.value);
 }
 
-let searchFormElement = document.querySelector("#searchForm");
-searchFormElement.addEventListener("submit", handleSearch);
-
 searchCity("Perth");
+updateDateTime();
+setInterval(updateDateTime, 60000);
