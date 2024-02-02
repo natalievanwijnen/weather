@@ -1,15 +1,15 @@
 :root {
-  --primary-bg-color: #efe9ec;
-  --text-color: #323232;
-  --accent-color: #271bb1;
-  --highlight-color: #ffb4fc;
-  --shadow-color: rgba(137, 140, 140, 0.5);
-  --symbol-color: #ffb4fc;
+  --background-primary: #2b4551;
+  --background-secondary: #223744;
+  --text: #e1dbc2;
+  --text-secondary: #001e31;
+  --highlights: #e2504b;
+  --highlights-secondary: #89a8be;
 }
 
 body {
-  background-color: var(--primary-bg-color);
-  color: var(--text-color);
+  background-color: var(--background-primary);
+  color: var(--text);
   font-family: "poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -17,9 +17,8 @@ body {
 }
 
 .container {
-  background: var(--primary-bg-color);
+  background: var(--background-secondary);
   border-radius: 10px;
-  box-shadow: -5px -5px 10px 0px #ffffff, 5px 5px 10px 0px var(--shadow-color);
   margin: 50px auto 30px;
   max-width: 550px;
   padding: 50px;
@@ -32,15 +31,15 @@ input:focus {
 }
 
 #citySearch::placeholder {
-  color: var(--shadow-color);
+  color: var(--highlights-secondary);
   text-align: center;
 }
 
 #citySearch {
   background: none;
   border: none;
-  border-bottom: 2px solid var(--highlight-color);
-  color: var(--accent-color);
+  border-bottom: 2px solid var(--highlights);
+  color: var(--details);
   font-family: "poppins", sans-serif;
   font-size: 16px;
   transition: width 0.3s ease;
@@ -55,6 +54,7 @@ input:focus {
 
 /* Current Weather */
 main {
+  color: var(--highlights-secondary);
   display: grid;
   grid-gap: 0.5rem;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -68,7 +68,7 @@ main {
 }
 
 .current-temp {
-  color: var(--accent-color);
+  color: var(--text);
   font-size: 64px;
   font-weight: 600;
   margin: 0;
@@ -87,18 +87,20 @@ main {
 
 /* Current Weather Details */
 .current-details {
+  color: var(--highlights-secondary);
   margin: 0;
   margin-top: 16px;
   text-align: left;
 }
 
 .current-details span.material-symbols-outlined {
-  color: var(--symbol-color);
+  color: var(--highlights-secondary);
   font-size: 20px;
 }
 
-strong.wind,
-strong.humidity {
+.wind,
+.humidity {
+  color: var(--text);
   font-size: 24px;
   font-weight: 600;
 }
@@ -114,7 +116,7 @@ strong.humidity {
 
 .weekday {
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .forecast-symbol img {
@@ -124,15 +126,14 @@ strong.humidity {
 }
 
 .forecast-temperature {
-  color: var(--accent-color);
+  color: var(--text);
   font-size: 16px;
-  font-weight: 600;
-  margin: -5px 0 0;
+  margin: 0 0;
 }
 
 /* Temperature Scale Switch */
 .scale-switch {
-  background: var(--primary-bg-color);
+  background: var(--background-secondary);
   border-radius: 35px;
   display: flex;
   justify-content: center;
@@ -143,9 +144,10 @@ strong.humidity {
 }
 
 .scale-switch button {
-  background: var(--primary-bg-color);
+  background: var(--background-secondary);
   border: none;
   border-radius: 50%;
+  color: var(--text);
   cursor: pointer;
   font-size: 12px;
   margin: 3px;
@@ -154,19 +156,19 @@ strong.humidity {
 }
 
 .scale-switch button.active {
-  background: var(--accent-color);
-  color: var(--primary-bg-color);
+  background: var(--highlights);
+  color: var(--text-secondary);
   font-weight: 600;
 }
 
 /* Footer */
 footer {
-  color: var(--text-color);
+  color: var(--highlights-secondary);
   font-size: 12px;
 }
 
 a {
-  color: var(--text-color);
+  color: var(--highlights-secondary);
   font-weight: 600;
   text-decoration: none;
 }
