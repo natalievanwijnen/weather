@@ -65,5 +65,10 @@ function handleSearch(event) {
 }
 
 searchCity("Perth");
+
 updateDateTime();
-setInterval(updateDateTime, 60000);
+
+setTimeout(function () {
+  updateDateTime();
+  setInterval(updateDateTime, 60000);
+}, (60 - new Date().getSeconds()) * 1000);
