@@ -32,7 +32,7 @@ input:focus {
 }
 
 #citySearch::placeholder {
-  color: var(--accent-color);
+  color: var(--shadow-color);
   text-align: center;
 }
 

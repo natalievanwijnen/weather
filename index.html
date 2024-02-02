@@ -25,7 +25,8 @@
               id="citySearch"
               placeholder="Perth"
               autocomplete="off"
-              oninput="adjustWidth()"
+              oninput="handleInput(event)"
+              onkeydown="handleInput(event)"
               required
             />
             , right now.
