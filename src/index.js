@@ -1,17 +1,17 @@
 // Input
 function handleInput(event) {
-  let inputElement = document.getElementById("citySearch");
-  let minWidth = 40;
+  const inputElement = document.getElementById("citySearch");
+  const minWidth = 40;
 
   if (event.key === "Enter") {
     event.preventDefault();
     searchCity(inputElement.value.trim());
   } else {
-    let inputValue = inputElement.value.trim();
-    let newWidth =
+    const inputValue = inputElement.value.trim();
+    const newWidth =
       inputValue === ""
-        ? minWidth + "px"
-        : Math.max(getTextWidth(inputValue), minWidth) + "px";
+        ? `${minWidth}px`
+        : `${Math.max(getTextWidth(inputValue), minWidth)}px`;
 
     inputElement.style.width = newWidth;
   }
@@ -19,24 +19,25 @@ function handleInput(event) {
 
 // Display
 function showWeather(response) {
-  let temperatureElement = document.querySelector("#temperature");
-  let descriptionElement = document.querySelector("#description");
-  let windElement = document.querySelector("#wind");
-  let humidityElement = document.querySelector("#humidity");
-  let iconElement = document.querySelector("#currentSymbol");
-
-  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
-  descriptionElement.innerHTML = response.data.condition.description;
-  windElement.innerHTML = Math.round(response.data.wind.speed);
-  humidityElement.innerHTML = Math.round(response.data.temperature.humidity);
-  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+  const { temperature, condition, wind } = response.data;
+  document.getElementById("temperature").innerHTML = Math.round(
+    temperature.current
+  );
+  document.getElementById("description").innerHTML = condition.description;
+  document.getElementById("wind").innerHTML = Math.round(wind.speed);
+  document.getElementById("humidity").innerHTML = Math.round(
+    temperature.humidity
+  );
+  document.getElementById(
+    "currentSymbol"
+  ).innerHTML = `<img src="${condition.icon_url}" class="weather-app-icon" />`;
 }
 
 function updateDateTime() {
-  let now = new Date();
-  let todayElement = document.getElementById("today");
-  let timeElement = document.getElementById("time");
-  let weekdays = [
+  const now = new Date();
+  const todayElement = document.getElementById("today");
+  const timeElement = document.getElementById("time");
+  const weekdays = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -55,8 +56,8 @@ function updateDateTime() {
 
 // API
 function searchCity(city) {
-  let apiKey = "ofa25a26c683btbc029a13b3d2bf94cc";
-  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  const apiKey = "ofa25a26c683btbc029a13b3d2bf94cc";
+  const apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
 
   axios.get(apiURL).then(showWeather);
 }
@@ -64,14 +65,14 @@ function searchCity(city) {
 // Event handling
 function handleSearch(event) {
   event.preventDefault();
-  let searchInput = document.querySelector("#citySearch");
+  const searchInput = document.querySelector("#citySearch");
   searchCity(searchInput.value);
   return false;
 }
 
 // Initialization
 function getTextWidth(text) {
-  let hiddenText = document.getElementById("hiddenText");
+  const hiddenText = document.getElementById("hiddenText");
   hiddenText.innerText = text;
   return hiddenText.offsetWidth;
 }
@@ -79,7 +80,7 @@ function getTextWidth(text) {
 searchCity("Perth");
 updateDateTime();
 
-setTimeout(function () {
+setTimeout(() => {
   updateDateTime();
   setInterval(updateDateTime, 60000);
 }, (60 - new Date().getSeconds()) * 1000);

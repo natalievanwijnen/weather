@@ -1,5 +1,5 @@
 :root {
-  --background-primary: #2b4551;
+  --background-primary: #253f4b;
   --background-secondary: #223744;
   --text: #e1dbc2;
   --text-secondary: #001e31;
@@ -20,7 +20,7 @@ body {
   background: var(--background-secondary);
   border-radius: 10px;
   margin: 50px auto 30px;
-  max-width: 550px;
+  max-width: 500px;
   padding: 50px;
 }
 
@@ -64,7 +64,13 @@ main {
 .current-symbol img {
   width: 115px;
   margin-top: 10px;
-  margin-right: -10px;
+  margin-right: -75px;
+}
+
+@media (max-width: 500px) {
+  .current-symbol img {
+    margin-right: -20px;
+  }
 }
 
 .current-temp {
@@ -120,9 +126,9 @@ main {
 }
 
 .forecast-symbol img {
-  max-width: 50px;
-  margin: -20px auto 0;
   display: block;
+  margin: -20px auto 0;
+  max-width: 50px;
 }
 
 .forecast-temperature {
@@ -157,7 +163,7 @@ main {
 
 .scale-switch button.active {
   background: var(--highlights);
-  color: var(--text-secondary);
+  color: var(--text);
   font-weight: 600;
 }
 
