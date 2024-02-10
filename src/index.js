@@ -54,7 +54,13 @@ function updateDateTime() {
   });
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "ofa25a26c683btbc029a13b3d2bf94cc";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios(apiURL).then(displayForecast);
+}
+
+function displayForecast(response) {
   let forecastElement = document.getElementById("forecast");
 
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -84,7 +90,6 @@ function displayForecast() {
 function searchCity(city) {
   const apiKey = "ofa25a26c683btbc029a13b3d2bf94cc";
   const apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-
   axios.get(apiURL).then(showWeather);
 }
 
@@ -104,6 +109,8 @@ function getTextWidth(text) {
 }
 
 searchCity("Perth");
+getForecast("Perth");
+
 updateDateTime();
 
 setTimeout(() => {
