@@ -54,6 +54,32 @@ function updateDateTime() {
   });
 }
 
+function displayForecast() {
+  let forecastElement = document.getElementById("forecast");
+
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+      <span>
+        <p class="forecast-day" id="weekday">${day}</p>
+        <div class="forecast-symbol" id="forecastSymbol">
+          <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" />
+        </div>
+          <span id="forecast-high">
+            <strong>16°</strong>
+          </span>
+          <span id="forecast-low">10°</span>
+      </span>
+    `;
+  });
+
+  forecastElement.innerHTML = forecastHtml;
+}
+
 // API
 function searchCity(city) {
   const apiKey = "ofa25a26c683btbc029a13b3d2bf94cc";
@@ -84,3 +110,5 @@ setTimeout(() => {
   updateDateTime();
   setInterval(updateDateTime, 60000);
 }, (60 - new Date().getSeconds()) * 1000);
+
+displayForecast();
