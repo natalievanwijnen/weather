@@ -134,38 +134,6 @@ main {
   font-weight: 600;
 }
 
-/* Temperature Scale Switch */
-/*
-.scale-switch {
-  background: var(--background-secondary);
-  border-radius: 35px;
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  position: relative;
-  top: 20px;
-  width: 70px;
-}
-
-.scale-switch button {
-  background: var(--background-secondary);
-  border: none;
-  border-radius: 50%;
-  color: var(--text);
-  cursor: pointer;
-  font-size: 12px;
-  margin: 3px;
-  padding: 8px;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.scale-switch button.active {
-  background: var(--accents);
-  color: var(--text);
-  font-weight: 600;
-}
-*/
-
 /* Footer */
 footer {
   color: var(--accents);
