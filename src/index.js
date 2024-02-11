@@ -1,14 +1,14 @@
 // Input
 function handleInput(event) {
-  const inputElement = document.getElementById("citySearch");
-  const minWidth = 40;
+  let inputElement = document.getElementById("citySearch");
+  let minWidth = 40;
 
   if (event.key === "Enter") {
     event.preventDefault();
     searchCity(inputElement.value.trim());
   } else {
-    const inputValue = inputElement.value.trim();
-    const newWidth =
+    let inputValue = inputElement.value.trim();
+    let newWidth =
       inputValue === ""
         ? `${minWidth}px`
         : `${Math.max(getTextWidth(inputValue), minWidth)}px`;
@@ -19,7 +19,7 @@ function handleInput(event) {
 
 // Display
 function showWeather(response) {
-  const { temperature, condition, wind } = response.data;
+  let { temperature, condition, wind } = response.data;
   document.getElementById("temperature").innerHTML = Math.round(
     temperature.current
   );
@@ -34,10 +34,10 @@ function showWeather(response) {
 }
 
 function updateDateTime() {
-  const now = new Date();
-  const todayElement = document.getElementById("today");
-  const timeElement = document.getElementById("time");
-  const weekdays = [
+  let now = new Date();
+  let todayElement = document.getElementById("today");
+  let timeElement = document.getElementById("time");
+  let weekdays = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -54,31 +54,23 @@ function updateDateTime() {
   });
 }
 
-function getForecast(city) {
-  let apiKey = "ofa25a26c683btbc029a13b3d2bf94cc";
-  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
-  axios(apiURL).then(displayForecast);
-}
-
 function displayForecast(response) {
   let forecastElement = document.getElementById("forecast");
-
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
-  days.forEach(function (day) {
+  response.data.daily.slice(0, 5).forEach(function (day) {
     forecastHtml =
       forecastHtml +
       `
       <span>
-        <p class="forecast-day" id="weekday">${day}</p>
+        <p class="forecast-day" id="weekday">${formatTimestamp(day.time)}</p>
         <div class="forecast-symbol" id="forecastSymbol">
-          <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" />
+          <img src="${day.condition.icon_url}" />
         </div>
-          <span id="forecast-high">
-            <strong>16°</strong>
-          </span>
-          <span id="forecast-low">10°</span>
+        <span id="forecast-high">
+          <strong>${Math.round(day.temperature.maximum)}°</strong>
+        </span>
+        <span id="forecast-low">${Math.round(day.temperature.minimum)}°</span>
       </span>
     `;
   });
@@ -88,34 +80,39 @@ function displayForecast(response) {
 
 // API
 function searchCity(city) {
-  const apiKey = "ofa25a26c683btbc029a13b3d2bf94cc";
-  const apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-  axios.get(apiURL).then(showWeather);
+  let apiKey = "ofa25a26c683btbc029a13b3d2bf94cc";
+  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  axios.get(apiURL).then(function (response) {
+    showWeather(response);
+    getForecast(city);
+  });
+}
+
+function getForecast(city) {
+  let apiKey = "ofa25a26c683btbc029a13b3d2bf94cc";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios(apiURL).then(displayForecast);
 }
 
 // Event handling
 function handleSearch(event) {
   event.preventDefault();
-  const searchInput = document.querySelector("#citySearch");
+  let searchInput = document.querySelector("#citySearch");
   searchCity(searchInput.value);
   return false;
 }
 
 // Initialization
 function getTextWidth(text) {
-  const hiddenText = document.getElementById("hiddenText");
+  let hiddenText = document.getElementById("hiddenText");
   hiddenText.innerText = text;
   return hiddenText.offsetWidth;
 }
 
+function formatTimestamp(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.toLocaleDateString("en-US", { weekday: "short" });
+  return day;
+}
+
 searchCity("Perth");
-getForecast("Perth");
-
-updateDateTime();
-
-setTimeout(() => {
-  updateDateTime();
-  setInterval(updateDateTime, 60000);
-}, (60 - new Date().getSeconds()) * 1000);
-
-displayForecast();

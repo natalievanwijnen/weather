@@ -2,7 +2,6 @@
   --background-primary: #f3efec;
   --background-secondary: #faf6f2;
   --text: #003767;
-  --text-secondary: #001e31;
   --highlights: #e2504b;
   --highlights-secondary: #89a8be;
 }
@@ -39,7 +38,7 @@ input:focus {
   background: none;
   border: none;
   border-bottom: 2px solid var(--highlights);
-  color: var(--highlights-secondary);
+  color: var(--text);
   font-family: "poppins", sans-serif;
   font-size: 16px;
   transition: width 0.3s ease;
@@ -129,7 +128,7 @@ main {
 .forecast-symbol img {
   display: block;
   margin: -15px auto 5px;
-  max-width: 50px;
+  max-width: 75px;
 }
 
 /* Temperature Scale Switch */
