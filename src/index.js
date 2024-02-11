@@ -57,7 +57,7 @@ function updateDateTime() {
 function displayForecast(response) {
   let forecastHtml = "";
 
-  response.data.daily.slice(0, 5).forEach(function (day) {
+  response.data.daily.slice(1, 6).forEach(function (day) {
     forecastHtml += `
       <span>
         <p class="forecast-day" id="weekday">${formatTimestamp(day.time)}</p>
@@ -111,8 +111,9 @@ function getTextWidth(text) {
 
 function formatTimestamp(timestamp) {
   let date = new Date(timestamp * 1000);
-  let day = date.toLocaleDateString("en-US", { weekday: "short" });
-  return day;
+  let day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return day[date.getDay()];
 }
 
 updateDateTime();
