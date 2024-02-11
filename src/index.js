@@ -115,4 +115,6 @@ function formatTimestamp(timestamp) {
   return day;
 }
 
+updateDateTime();
+
 searchCity("Perth");
