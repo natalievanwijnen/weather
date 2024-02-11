@@ -55,13 +55,10 @@ function updateDateTime() {
 }
 
 function displayForecast(response) {
-  let forecastElement = document.getElementById("forecast");
   let forecastHtml = "";
 
   response.data.daily.slice(0, 5).forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+    forecastHtml += `
       <span>
         <p class="forecast-day" id="weekday">${formatTimestamp(day.time)}</p>
         <div class="forecast-symbol" id="forecastSymbol">
@@ -75,6 +72,7 @@ function displayForecast(response) {
     `;
   });
 
+  let forecastElement = document.getElementById("forecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
