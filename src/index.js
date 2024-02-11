@@ -64,10 +64,12 @@ function displayForecast(response) {
         <div class="forecast-symbol" id="forecastSymbol">
           <img src="${day.condition.icon_url}" />
         </div>
-        <span id="forecast-high">
-          <strong>${Math.round(day.temperature.maximum)}°</strong>
-        </span>
-        <span id="forecast-low">${Math.round(day.temperature.minimum)}°</span>
+        <div class="forecast-min-max">
+          <span id="forecast-high"><strong>${Math.round(
+            day.temperature.maximum
+          )}°</strong></span>
+          <span id="forecast-low">${Math.round(day.temperature.minimum)}°</span>
+        </div>
       </span>
     `;
   });
